@@ -50,7 +50,7 @@ Improvement Actions:
 - Improve documentation of triage, evidence collection, and follow-up actions.
 
 Screenshot Added:
-
+- splunk-auth-failed-events.png
 
 Result:
 The post-incident review confirmed that authentication failure events were present in the Ubuntu auth log and were visible in Splunk after log ingestion. No confirmed compromise was established from this review alone, but the activity was sufficient to justify triage, evidence collection, and continued monitoring.
