@@ -1,1 +1,28 @@
+Threat Hunting Practice
 
+System/VM Used:ubantu 
+
+Objective:
+To investigate suspicious activity using a threat hunting hypothesis.
+
+Tool Used:
+- Elastic Security
+- Velociraptor
+- AlienVault OTX
+
+Hypothesis:
+[Write your real hypothesis here]
+
+What I Did:
+1.
+2.
+3.
+
+What I Observed:
+-
+
+MITRE ATT&CK Mapping:
+-
+
+Screenshot Added:
+[Write screenshot filename here]
