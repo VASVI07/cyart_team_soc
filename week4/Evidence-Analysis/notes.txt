@@ -15,18 +15,21 @@ Network connection snapshot saved as a text file
 What I Did:
 1. Opened the Ubuntu VM terminal.
 2. Ran the command ss -tunap > network-evidence.txt.
-3. Saved the active network connection output into a text file for evidence collection.
+3. Saved the active network connection output into a text file for later evidence review.
 
 What I Observed:
-- A file named network-evidence.txt was created successfully.
-- The file stored active TCP and UDP connection details from the Ubuntu VM.
-- This evidence can be reviewed later for suspicious or unusual network activity.
+- The command created a file named network-evidence.txt successfully.
+- The file stored active TCP and UDP connection details from the Ubuntu VM at the time of collection.
+- This evidence can be used later to review currently active connections and check for unusual network activity.
 
 Chain of Custody / Evidence Note:
-The evidence file was collected manually from the Ubuntu VM during lab work and saved locally as network-evidence.txt.
+The evidence file was collected manually from the Ubuntu VM terminal during lab activity and saved locally as network-evidence.txt.
 
 Action Taken:
-Collected and preserved the network connection output as a text evidence file.
+Collected and preserved the network connection output as a text evidence file for analysis.
 
 Screenshot Added:
 - ubuntu-network-evidence-output.png
+
+Result:
+A network evidence file was successfully collected from the Ubuntu VM using the ss command. The evidence was preserved as network-evidence.txt for later review and can support analysis of active connections during the investigation.
