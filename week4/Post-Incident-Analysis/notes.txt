@@ -1,1 +1,56 @@
+Post-Incident Analysis Practice
 
+System/VM Used: Ubuntu with Splunk
+
+Objective:
+To analyze a security-related incident after detection and identify root cause, lessons learned, and improvement actions.
+
+Incident Summary:
+During log review on the Ubuntu VM, authentication-related failure events were observed in both the terminal and Splunk. The review also showed some service activation failure messages. The main incident selected for analysis was repeated password check failure entries for the local user account.
+
+Tool Used:
+- Ubuntu Terminal
+- /var/log/auth.log
+- Splunk Search & Reporting
+
+What I Did:
+1. Reviewed failed entries from /var/log/auth.log in the Ubuntu terminal.
+2. Added /var/log/auth.log into Splunk using Monitor input.
+3. Searched Splunk for failed events related to authentication and service failures.
+4. Compared the terminal findings with the Splunk search results for validation.
+
+What I Observed:
+- Splunk returned failed events from /var/log/auth.log.
+- The visible failed events included password check failed entries for user vatsala.
+- Some failed service activation messages such as org.bluez were also present.
+- Authentication-related failures were treated as the primary security-relevant issue for this analysis.
+
+5 Whys Analysis:
+1. Why was the incident reviewed?
+   Because failed authentication-related events were detected in the Ubuntu auth log.
+2. Why were failed authentication events present?
+   Because password verification attempts for the local user account did not succeed.
+3. Why did the password verification not succeed?
+   Because incorrect or unsuccessful authentication attempts were made for the user account.
+4. Why is this important from a SOC perspective?
+   Because repeated authentication failures can indicate account misuse, mistyped credentials, or attempted unauthorized access.
+5. Why should this be improved?
+   Because early review of failed authentication activity helps detect suspicious access attempts faster and supports quicker response.
+
+Lessons Learned:
+- Authentication failures should be separated from normal service/system failures during triage.
+- Splunk ingestion improved visibility and made log review easier.
+- Keeping Ubuntu auth logs searchable in Splunk supports faster SOC-style investigation.
+- Repeated failed login activity should be reviewed promptly even when compromise is not confirmed.
+
+Improvement Actions:
+- Continue monitoring /var/log/auth.log in Splunk.
+- Review repeated failed authentication entries regularly.
+- Validate whether failed login attempts are expected or suspicious.
+- Improve documentation of triage, evidence collection, and follow-up actions.
+
+Screenshot Added:
+
+
+Result:
+The post-incident review confirmed that authentication failure events were present in the Ubuntu auth log and were visible in Splunk after log ingestion. No confirmed compromise was established from this review alone, but the activity was sufficient to justify triage, evidence collection, and continued monitoring.
