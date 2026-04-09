@@ -1,1 +1,47 @@
+SOAR Playbook Development
 
+System/VM Used: Ubuntu with Splunk
+
+Objective:
+To design a practical incident response playbook for authentication-failure events observed in Ubuntu logs and monitored through Splunk.
+
+Tool Used:
+- Splunk Search & Reporting
+- Ubuntu auth log monitoring
+
+Use Case:
+Authentication Failure / Failed Password Check Alert
+
+Playbook Workflow:
+1. Splunk detects failed events from /var/log/auth.log.
+2. Analyst reviews the search results to identify authentication-related failures.
+3. Analyst separates password check failures from normal service timeout messages.
+4. Relevant failed authentication entries are validated against the Ubuntu auth log.
+5. Evidence is collected by saving network connection details and reviewing running processes on the Ubuntu VM.
+6. Incident details are documented for triage and post-incident review.
+7. Continued monitoring is recommended if repeated failures continue.
+
+What I Did:
+1. Added /var/log/auth.log into Splunk for monitoring.
+2. Searched Splunk for failed events from the Ubuntu auth log.
+3. Used the search results to outline a response workflow for authentication-related alerts.
+4. Connected the workflow with the earlier triage, threat hunting, and evidence analysis steps completed in the lab.
+
+What I Observed:
+- Splunk made failed auth-related events easier to review.
+- Authentication failures and service failures appeared in the same monitored log source.
+- A structured playbook helps separate investigation, validation, evidence collection, and follow-up actions.
+
+Response Actions Included:
+- Review Splunk failed-event results
+- Validate auth log entries
+- Check related system activity
+- Collect supporting evidence
+- Document findings
+- Continue monitoring or escalate if activity increases
+
+Screenshot Added:
+- splunk-soar-playbook-reference.png
+
+Result:
+A simple SOC-style response playbook was created using the Ubuntu authentication-failure incident as the use case. The playbook shows how Splunk monitoring, triage, validation, evidence collection, and follow-up actions can be organized into a repeatable workflow.
