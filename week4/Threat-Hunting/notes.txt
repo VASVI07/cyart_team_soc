@@ -11,18 +11,22 @@ Tool Used:
 - AlienVault OTX
 
 Hypothesis:
-[Write your real hypothesis here]
+Suspicious outbound network connections may be running from the Ubuntu VM.
 
 What I Did:
-1.
-2.
-3.
+1. Opened the Ubuntu VM terminal.
+2. Ran the command ss -tunap to review active TCP and UDP connections.
+3. Checked the output for established connections, unusual ports, and unknown external IP addresses.
 
 What I Observed:
--
+- Most visible connections were local loopback connections using 127.0.0.1.
+- Multiple services were in LISTEN state on local ports.
+- Established connections shown in the output were mainly internal localhost communications.
+- No clearly suspicious external remote IP was confirmed from this check.
 
 MITRE ATT&CK Mapping:
--
+Initial network connection review for possible suspicious activity. Further investigation required before confirming a specific MITRE technique.
 
 Screenshot Added:
+
 [Write screenshot filename here]
