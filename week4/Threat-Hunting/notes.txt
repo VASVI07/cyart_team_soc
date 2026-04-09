@@ -16,6 +16,7 @@ What I Did:
 1. Opened the Ubuntu VM terminal.
 2. Ran the command ss -tunap to review active TCP and UDP connections.
 3. Checked the output for established connections, unusual ports, and unknown external IP addresses.
+4. Ran the command ps aux --sort=-%mem | head to review high memory-usage processes on the Ubuntu VM.
 
 What I Observed:
 - Multiple listening services were visible on the system.
