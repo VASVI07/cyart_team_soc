@@ -32,3 +32,6 @@ Initial network connection review for possible suspicious activity. No confirmed
 Screenshot Added:
 - ubuntu-ss-tunap-output.png
 - ubuntu-ss-tunap-output2.png
+
+Result:
+The threat hunting checks performed on the Ubuntu VM did not confirm any clearly suspicious external connection or unknown malicious process during this review. The observed connections and processes mostly matched the local lab environment.
