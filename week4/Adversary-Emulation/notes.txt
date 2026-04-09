@@ -1,1 +1,43 @@
+Adversary Emulation Practice
 
+System/VM Used: Ubuntu with Splunk
+
+Objective:
+To document an adversary-style authentication misuse scenario and explain how it would be detected and reviewed in the current Ubuntu and Splunk lab environment.
+
+Tool Used:
+- Splunk Search & Reporting
+- Ubuntu auth log
+- Ubuntu Terminal
+
+Emulation Scenario:
+A simulated adversary behavior was considered in which repeated failed authentication attempts occur against a local Ubuntu user account. This was treated as an account misuse or unauthorized access attempt scenario for defensive review.
+
+Technique Focus:
+Authentication misuse / repeated failed login attempts
+
+What I Did:
+1. Reviewed failed authentication-related events from /var/log/auth.log.
+2. Added the Ubuntu auth log into Splunk for monitoring and search visibility.
+3. Searched Splunk for failed events related to password check failures and other failure indicators.
+4. Used the observed failed login activity as the basis for an adversary-style detection scenario.
+
+What I Observed:
+- Splunk showed failed events from the Ubuntu auth log.
+- Password check failed entries for the local user account were visible.
+- Some general service-related failure events were also present in the same log source.
+- The authentication-related failed entries were the most relevant for adversary-style review.
+
+Detection Approach:
+- Monitor /var/log/auth.log for repeated failed authentication attempts
+- Review Splunk search results for password-related failures
+- Validate findings directly from the Ubuntu terminal log output
+- Escalate for deeper review if failed attempts increase or become repetitive
+
+Lab Limitation:
+A dedicated adversary emulation tool such as MITRE Caldera was not used in this Ubuntu-Splunk lab. Instead, the emulation was documented as a defensive investigation scenario based on real failed authentication events observed in the monitored log source.
+
+
+
+Result:
+An adversary-emulation-style detection scenario was documented using real Ubuntu auth log activity and Splunk monitoring. Although no dedicated attack simulation platform was used, the exercise showed how repeated authentication failures could be treated as suspicious behavior and reviewed from a SOC perspective.
