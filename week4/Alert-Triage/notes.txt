@@ -1,28 +1,34 @@
 Alert Triage Practice
 
-System/VM Used:
+System/VM Used: Ubuntu
 
 Objective:
-To review and classify a security alert based on available evidence.
+To review and classify a security-related alert based on authentication log evidence.
 
 Tool Used:
+- Ubuntu Terminal
+- grep command
+- /var/log/auth.log
 
 Alert Name/Type:
+Authentication Failure / Failed Password Check Alert
 
 What I Did:
-1.
-2.
-3.
+1. Opened the Ubuntu VM terminal.
+2. Ran the command grep -i "failed" /var/log/auth.log | tail to review recent failed log entries.
+3. Checked the output to identify authentication-related failures and other system failure messages.
 
 What I Observed:
--
+- The log output showed multiple "password check failed for user (vatsala)" entries.
+- The output also showed service timeout errors such as failed activation of org.bluez and org.freedesktop.UPower.PowerProfiles.
+- The authentication failure entries were more relevant for security triage than the service timeout messages.
 
 Priority/Severity:
--
+Medium
 
 Action Taken:
--
+Reviewed the failed log entries, separated authentication-related events from service-related failures, and marked the authentication failure entries for further review.
 
 Screenshot Added:
--
-
+- ubuntu-auth-failed-output1.png
+- ubuntu-auth-failed-output2.png
