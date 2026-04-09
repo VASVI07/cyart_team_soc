@@ -1,1 +1,28 @@
+Alert Triage Practice
+
+System/VM Used:
+
+Objective:
+To review and classify a security alert based on available evidence.
+
+Tool Used:
+
+Alert Name/Type:
+
+What I Did:
+1.
+2.
+3.
+
+What I Observed:
+-
+
+Priority/Severity:
+-
+
+Action Taken:
+-
+
+Screenshot Added:
+-
 
