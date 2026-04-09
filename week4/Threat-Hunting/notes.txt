@@ -1,14 +1,13 @@
 Threat Hunting Practice
 
-System/VM Used:ubantu 
+System/VM Used: Ubuntu
 
 Objective:
-To investigate suspicious activity using a threat hunting hypothesis.
+To investigate suspicious activity by reviewing active network connections on the Ubuntu VM.
 
 Tool Used:
-- Elastic Security
-- Velociraptor
-- AlienVault OTX
+- Ubuntu Terminal
+- ss command
 
 Hypothesis:
 Suspicious outbound network connections may be running from the Ubuntu VM.
@@ -19,14 +18,14 @@ What I Did:
 3. Checked the output for established connections, unusual ports, and unknown external IP addresses.
 
 What I Observed:
-- Most visible connections were local loopback connections using 127.0.0.1.
-- Multiple services were in LISTEN state on local ports.
-- Established connections shown in the output were mainly internal localhost communications.
-- No clearly suspicious external remote IP was confirmed from this check.
+- Multiple listening services were visible on the system.
+- Most established connections shown were local loopback connections using 127.0.0.1.
+- No clearly suspicious remote external IP was confirmed from this check.
+- This step helped verify currently active local and network-facing connections on the VM.
 
 MITRE ATT&CK Mapping:
-Initial network connection review for possible suspicious activity. Further investigation required before confirming a specific MITRE technique.
+Initial network connection review for possible suspicious activity. No confirmed malicious technique was identified from this step alone.
 
 Screenshot Added:
-
-[Write screenshot filename here]
+- ubuntu-ss-tunap-output.png
+- ubuntu-ss-tunap-output2.png
