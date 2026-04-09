@@ -22,6 +22,8 @@ What I Observed:
 - Most established connections shown were local loopback connections using 127.0.0.1.
 - No clearly suspicious remote external IP was confirmed from this check.
 - This step helped verify currently active local and network-facing connections on the VM.
+- Process review showed active services such as gnome-shell, redis-server, gvmd, ospd-openvas, and VBoxClient, which matched the lab and VM environment.
+
 
 MITRE ATT&CK Mapping:
 Initial network connection review for possible suspicious activity. No confirmed malicious technique was identified from this step alone.
