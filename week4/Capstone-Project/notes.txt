@@ -1,1 +1,68 @@
+Capstone Project: Comprehensive SOC Incident Response
 
+Project Title:
+Authentication Failure Investigation on Ubuntu VM using Splunk, Threat Hunting, and Evidence Collection
+
+System/VM Used:
+Ubuntu VM with Splunk
+
+Objective:
+To perform an end-to-end SOC-style investigation using Ubuntu logs, Splunk monitoring, threat hunting steps, alert triage, evidence collection, post-incident analysis, and security metrics.
+
+Incident Scenario:
+Repeated failure-related events were identified in the Ubuntu auth log. These included password check failed entries for the local user account and additional service-related failure messages. The incident was investigated as a SOC case to determine whether the activity indicated suspicious authentication behavior or another system issue.
+
+Detection:
+The incident was first identified by reviewing failed entries in the Ubuntu auth log and later validated through Splunk after /var/log/auth.log was added as a monitored data source.
+
+Triage:
+The failed events were reviewed to separate authentication-related failures from general service timeout messages. Password check failed entries for the user account were treated as the main security-relevant events.
+
+Threat Hunting:
+Threat hunting was performed on the Ubuntu VM by reviewing:
+1. Active network connections using ss -tunap
+2. High memory-usage processes using ps aux --sort=-%mem | head
+
+Evidence Collection:
+Network evidence was collected by saving active connection details into a file using:
+ss -tunap > network-evidence.txt
+
+Splunk Validation:
+The Ubuntu auth log was added into Splunk using file monitoring. Searches in Splunk confirmed that failed events from /var/log/auth.log were searchable and visible under sourcetype ubuntu_auth_log.
+
+Findings:
+- Password check failed entries for the local user were present in the auth log.
+- Additional failed service activation entries such as org.bluez were also present.
+- Threat hunting did not confirm a suspicious external IP connection.
+- Process review showed services consistent with the Ubuntu lab environment.
+- Splunk monitoring improved visibility into the incident data.
+
+Response Actions:
+- Reviewed the failed auth log events in terminal and Splunk
+- Collected network evidence for preservation
+- Reviewed current connections and processes
+- Documented findings for post-incident analysis
+- Recommended continued monitoring of repeated failed authentication events
+
+Post-Incident Review:
+A 5 Whys analysis was performed to understand why the incident required investigation. The review showed that repeated authentication failures should be monitored carefully even when a confirmed compromise is not established.
+
+Security Metrics:
+A Splunk statistics query was used to count matched failed events from the Ubuntu auth log.
+Observed metric:
+- Failed-event count: 66
+- Host: vatsala-VirtualBox
+- Sourcetype: ubuntu_auth_log
+
+Conclusion:
+The capstone investigation demonstrated a complete SOC-style workflow using the Ubuntu VM and Splunk. The incident involved authentication failure events that were detected, triaged, validated, investigated, documented, and measured. No confirmed malicious compromise was established from the available evidence, but the workflow showed how logs, Splunk, threat hunting, and evidence analysis can be combined in a practical investigation.
+
+Screenshot Added:
+- ubuntu-auth-failed-output1.png
+- ubuntu-network-evidence-output.png
+- ubuntu-ss-tunap-output.png
+- ubuntu-ps-aux-output.png
+- splunk-auth-failed-events.png
+
+Result:
+A full incident response workflow was completed using real Ubuntu and Splunk lab activity. The capstone covered detection, triage, threat hunting, evidence collection, Splunk validation, metrics, and post-incident review in one connected investigation.
