@@ -32,3 +32,7 @@ Reviewed the failed log entries, separated authentication-related events from se
 Screenshot Added:
 - ubuntu-auth-failed-output1.png
 - ubuntu-auth-failed-output2.png
+
+Result:
+The alert triage review identified authentication failure entries in the Ubuntu auth log, along with some service timeout messages. The authentication-related events were treated as more relevant for security review, while the service failures appeared system-related and required separate troubleshooting.
+
