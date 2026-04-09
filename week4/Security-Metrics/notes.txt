@@ -1,1 +1,39 @@
+Security Metrics Practice
 
+System/VM Used: Ubuntu with Splunk
+
+Objective:
+To calculate and review simple security monitoring metrics based on authentication-related failed events collected from the Ubuntu auth log in Splunk.
+
+Tool Used:
+- Splunk Search & Reporting
+- /var/log/auth.log
+
+Metric Query Used:
+index=main source="/var/log/auth.log" ("password check failed" OR "failed for user" OR "failed") | stats count by host sourcetype
+
+What I Did:
+1. Added /var/log/auth.log into Splunk using file monitoring.
+2. Searched Splunk for failed authentication and related failure events from the Ubuntu auth log.
+3. Used a stats query to count failed events by host and sourcetype.
+4. Reviewed the count result to understand the volume of failure-related events in the dataset.
+
+What I Observed:
+- Splunk returned failure-related events from the Ubuntu auth log.
+- The statistics output showed the sourcetype as ubuntu_auth_log.
+- The count of matched failed events was 66.
+- This metric included both authentication-related failures and some service-related failure entries from the monitored log source.
+
+Metric Summary:
+- Host: vatsala-VirtualBox
+- Sourcetype: ubuntu_auth_log
+- Failed-event count observed in search results: 66
+
+Metric Interpretation:
+The count of 66 failure-related events shows that failed entries were present in the monitored Ubuntu auth log and were searchable in Splunk. This metric helps measure visibility into suspicious or review-worthy log activity, although deeper filtering is still needed to separate authentication failures from normal service issues.
+
+Screenshot Added:
+- splunk-security-metrics-count.png
+
+Result:
+A basic security metric was successfully generated in Splunk using Ubuntu auth log data. The metric confirmed that failed events were being collected and counted, which supports incident review, monitoring visibility, and future reporting.
