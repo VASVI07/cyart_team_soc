@@ -1,1 +1,34 @@
+Week 4 Documentation Summary
 
+Theoretical Learning Summary
+
+1. Threat Hunting Methodologies
+Threat hunting is a proactive security activity used to identify suspicious behavior before it becomes a confirmed incident. It involves forming a hypothesis, checking system and log data, validating findings, and documenting results. In this week’s work, threat hunting was applied by reviewing active network connections and running processes on the Ubuntu VM.
+
+2. Advanced SOAR Automation
+SOAR stands for Security Orchestration, Automation, and Response. It helps analysts create repeatable response workflows for security alerts. A playbook improves consistency by defining what to check, what evidence to collect, and when to escalate. In this week’s lab, a Splunk-based playbook was documented for handling failed authentication alerts from the Ubuntu auth log.
+
+3. Post-Incident Analysis and Continuous Improvement
+Post-incident analysis is the process of reviewing an event after investigation to understand what happened, why it happened, and what should improve. Root cause analysis techniques such as 5 Whys help identify the reason an event needed investigation. In this week’s work, repeated authentication failures were reviewed and lessons learned were documented.
+
+4. Adversary Emulation Techniques
+Adversary emulation is the practice of simulating attacker behavior to test detection and response capability. Even when a full emulation platform is not available, analysts can still document how suspicious attacker-like behavior would appear in logs and how it should be detected. In this lab, repeated failed authentication attempts were treated as an adversary-style misuse scenario for defensive review.
+
+5. Security Metrics and Executive Reporting
+Security metrics help measure visibility, detection capability, and response effectiveness. Examples include failed-event counts, MTTD, MTTR, and false positive rate. Clear reporting helps explain technical findings in a way that supports decision-making. In this week’s lab, Splunk was used to calculate a count of failure-related auth log events and support reporting.
+
+Practical Learning Summary
+
+This week’s practical work was completed using an Ubuntu VM and Splunk. The completed activities included:
+- Threat hunting using network and process review
+- Alert triage using Ubuntu auth log failures
+- Evidence collection using saved network connection output
+- Post-incident analysis using Splunk and 5 Whys
+- Security metrics using Splunk statistics
+- SOAR playbook documentation using a Splunk-based alert workflow
+- Adversary-style review based on repeated failed authentication events
+- Capstone incident response documentation combining all tasks into one workflow
+
+Overall Result
+
+Week 4 combined theoretical learning with practical SOC-style investigation. The work demonstrated how Ubuntu logs, Splunk searches, threat hunting, evidence collection, alert triage, and incident analysis can be connected into a complete investigative workflow.
