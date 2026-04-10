@@ -37,7 +37,8 @@ Detection Approach:
 Lab Limitation:
 A dedicated adversary emulation tool such as MITRE Caldera was not used in this Ubuntu-Splunk lab. Instead, the emulation was documented as a defensive investigation scenario based on real failed authentication events observed in the monitored log source.
 
-
+Screenshot Added:
+- splunk-adversary-emulation-reference.png
 
 Result:
 An adversary-emulation-style detection scenario was documented using real Ubuntu auth log activity and Splunk monitoring. Although no dedicated attack simulation platform was used, the exercise showed how repeated authentication failures could be treated as suspicious behavior and reviewed from a SOC perspective.
